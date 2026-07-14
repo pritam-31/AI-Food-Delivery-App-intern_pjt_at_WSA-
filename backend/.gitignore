@@ -1,0 +1,17 @@
+# dependencies
+node_modules/
+
+# environment variables
+config/config.env
+
+# logs
+*.log
+
+# build/dist folders (agar aap use karte hain)
+dist/
+build/
+
+# IDE/Editor files
+.vscode/
+.idea/
+.DS_Store
