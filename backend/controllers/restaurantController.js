@@ -18,3 +18,17 @@ exports.getAllRestaurants = catchAsyncErrors(
     });
     
 });
+
+//get restaurants by it's id
+exports.getRestaurant = catchAsyncErrors(async(req, res, next) => {
+    const restaurant = await Restaurant.findById(req.params.storeId);
+
+    if(!restaurant) {
+        return next(new ErrorHandler("No Restaurant forund with the ID",404))
+    }
+
+    res.status(200).json({
+        status: "Success",
+        data: restaurant
+    })
+});
